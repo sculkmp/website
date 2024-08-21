@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "Sculk",
   description: "Sculk is the Minecraft Bedrock server that combines power and innovation. Designed to deliver top-tier performance and customizable features, we aim to transform your gaming experience.",
-  maintenance: true,
+  maintenance: false,
   navItems: [
     {
       label: "Docs",
