@@ -9,9 +9,23 @@ import { Mountain } from "lucide-react";
 
 const LandingHero: React.FC = () => {
   const [showChip] = React.useState(true);
-  const [chipText] = React.useState("Sculk beta");
+  const [chipText] = React.useState("Sculk is in work in progress");
   const installCommand = "npx i sculk";
-  const rotatingWords = ["Sculk", "Ultimate Server", "Next-Gen Performance", "Gaming Revolution", "Top-Tier Solution"];
+  const rotatingWords = [
+    "Sculk",
+    "Ultimate Server",
+    "Next-Gen Performance",
+    "Gaming Revolution",
+    "Top-Tier Solution",
+    "Advanced Plugins",
+    "Seamless Integration",
+    "Customizable Features",
+    "Enhanced Stability",
+    "Effortless Setup",
+    "Lag-Free Experience",
+    "Innovative Tools",
+    "Ultimate Flexibility",
+  ];
 
   return (
     <section className="relative overflow-hidden px-4 text-gray-200" id="home">
@@ -85,7 +99,6 @@ const LandingHero: React.FC = () => {
             </Button>
           </div>
         </div>
-        <Blur/>
         <Spacer y={12}/>
       </div>
     </section>
@@ -93,17 +106,3 @@ const LandingHero: React.FC = () => {
 };
 
 export default LandingHero;
-
-export function Blur() {
-  return (
-    <div
-      aria-hidden="true"
-      className="absolute bottom-0 left-0 right-0 grid grid-cols-2 opacity-60 dark:opacity-10 pointer-events-none z-[-1]"
-    >
-      <div
-        className="fix-safari-blur blur-[106px] h-56 bg-gradient-to-br from-green-400 to-green-600 dark:from-green-700"></div>
-      <div
-        className="fix-safari-blur blur-[106px] h-32 bg-gradient-to-r from-green-300 to-green-500 dark:to-green-700"></div>
-    </div>
-  );
-}

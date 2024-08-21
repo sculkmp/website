@@ -24,6 +24,7 @@ export const Head: React.FC<HeadProps> = ({ title, description }) => {
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content="/sculk.webp" />
+      <meta property="twitter:card" content="summary" />
       <meta property="keywords" name="keywords"
             content="Sculk, sculk, sculkmp, sculk-mp, sculk mp, minecraft, bedrock, mcpe, mcbe, minecraft-bedrock, software, software-bedrock" />
       <meta
@@ -31,7 +32,7 @@ export const Head: React.FC<HeadProps> = ({ title, description }) => {
         content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         name="viewport"
       />
-      <link href="/favicon.ico" rel="icon"/>
+      <link href="/favicon.ico" rel="icon" />
     </NextHead>
   );
 };
