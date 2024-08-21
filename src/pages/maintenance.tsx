@@ -7,7 +7,7 @@ import { Head } from "@/layouts/head";
 export default function MaintenancePage() {
   return (
     <div className="flex items-center justify-center h-screen bg-background">
-      <Head title={"Sculk | Maintenance"} description={"Steve is in a tough spot! The Warden is chasing him and we're fixing things behind the scenes. Please bear with us while we get everything back on track. Thanks for your patience!"} />
+      <Head title={"Maintenance"} description={"Steve is in a tough spot! The Warden is chasing him and we're fixing things behind the scenes. Please bear with us while we get everything back on track. Thanks for your patience!"} />
       <Card className="max-w-xl p-8 text-center shadow-lg border-4 border-cyan-900">
         <CardHeader className="flex justify-center mb-4">
           <img
