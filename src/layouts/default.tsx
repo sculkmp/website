@@ -1,10 +1,10 @@
-import { Head } from "./head";
 import { Navbar } from "@/components/navbar";
 import React from "react";
 import { siteConfig } from "@/config/site";
 import MaintenancePage from "@/pages/maintenance";
+import { SEO } from "@/layouts/SEO";
 
-export default function DefaultLayout({
+export default function Layout({
                                         children,
                                       }: {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ export default function DefaultLayout({
 
   return (
     <div className="relative flex flex-col h-screen">
-      <Head title={"Home"}/>
+      <SEO title={"Home"}/>
       <Navbar />
       <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">
         {children}

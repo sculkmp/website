@@ -2,12 +2,12 @@ import React from "react";
 import NextHead from "next/head";
 import { siteConfig } from "@/config/site";
 
-interface HeadProps {
+interface SeoProps {
   title?: string;
   description?: string;
 }
 
-export const Head: React.FC<HeadProps> = ({ title, description }) => {
+export const SEO: React.FC<SeoProps> = ({ title, description }) => {
   const pageTitle = title + " | " + siteConfig.name;
   const pageDescription = description || siteConfig.description;
 
