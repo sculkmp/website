@@ -76,7 +76,7 @@ const LandingHero: React.FC = () => {
             className="flex flex-col items-center justify-center gap-3 mt-4 sm:flex-row sm:justify-center flex-wrap">
             <Button
               className="inline-flex items-center justify-center w-full sm:w-auto h-12 px-6 group rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 py-2 group bg-cyan-950 hover:opacity-30 transition-all duration-200 ease-in-out hover:ring-2 hover:ring-offset-2 hover:ring-cyan-900"
-              startContent={<Mountain />}
+              startContent={<Mountain className={"group-hover:text-stone-900 transition-colors duration-200 ease-in-out"}/>}
               as={Link}
               href="/#features"
             >
@@ -90,7 +90,7 @@ const LandingHero: React.FC = () => {
               <GithubIcon/>
               <span className="text-white">Star on Github</span>
               <span
-                className="flex items-center ml-4 group-hover:text-yellow-500 transition-colors duration-200 ease-in-out">
+                className="flex items-center ml-2 group-hover:text-yellow-300 transition-colors duration-200 ease-in-out">
                                 <StarIcon/>
                                 <span className="text-white ml-2">
                                     0
