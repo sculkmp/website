@@ -8,20 +8,20 @@ interface HeadProps {
 }
 
 export const Head: React.FC<HeadProps> = ({ title, description }) => {
-  const pageTitle = title || siteConfig.name;
+  const pageTitle = title + " | " + siteConfig.name;
   const pageDescription = description || siteConfig.description;
 
   return (
     <NextHead>
       <title>{pageTitle}</title>
       <meta content={pageDescription} name="description" />
-      <meta property="og:title" content={pageTitle} />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={pageDescription} />
-      <meta property="og:site_name" content={pageTitle} />
+      <meta property="og:site_name" content={siteConfig.name} />
       <meta property="og:image" content="/sculk.webp" />
       <meta property="og:url" content="https://sculkmp.org/" />
       <meta property="og:type" content="website" />
-      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content="/sculk.webp" />
       <meta property="twitter:card" content="summary" />
