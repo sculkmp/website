@@ -6,8 +6,10 @@ import {GithubIcon, StarIcon} from "@/components/icons";
 import TextRotate from "@/components/utils/TextRotate";
 import SparklesText from "@/components/utils/SparklesText";
 import { Mountain } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const LandingHero: React.FC = () => {
+  const { t } = useTranslation();
   const [showChip] = React.useState(true);
   const [chipText] = React.useState("Sculk is in work in progress");
   const installCommand = "npx i sculk";
@@ -42,6 +44,9 @@ const LandingHero: React.FC = () => {
               {chipText}
             </Chip>
           )}
+          <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+            {t('welcome')}
+          </h1>
           <div className="text-center">
             <div className="mx-auto mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
               <SparklesText
