@@ -17,15 +17,30 @@ import {
   DiscordIcon,
   Logo,
 } from "@/components/icons";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
+import React from "react";
+import { useChangeLocale, useCurrentLocale, useI18n, useScopedI18n } from "@/locales";
 
 export const Navbar = () => {
+  const [selectedKeys, setSelectedKeys] = React.useState<Set<string>>(new Set([useCurrentLocale()]));
+  const t = useScopedI18n("navbar");
+  const selectedValue = React.useMemo(() => {
+    const localeMap: { [key: string]: string } = {
+      en: "English",
+      fr: "French",
+    };
+    return localeMap[Array.from(selectedKeys)[0]] || "English";
+  }, [selectedKeys]);
+
+  const changeLocale = useChangeLocale()
+
   return (
     <NextUINavbar maxWidth="2xl" position="sticky" className="top-0">
       <NavbarContent className="flex-grow" justify="start">
         <NavbarBrand className="gap-3 max-w-fit pr-2">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
-            <p className="font-bold text-inherit">Sculk</p>
+            <p className="font-bold text-inherit text-white">Sculk</p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -42,7 +57,7 @@ export const Navbar = () => {
                 showAnchorIcon
                 target="_blank"
               >
-                {item.label}
+                {t(item.label as "downloads" | "teams" | "contribute")}
               </Button>
             ) : (
               <NextLink href={item.href}>
@@ -50,7 +65,7 @@ export const Navbar = () => {
                   className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 group transition-all duration-200 ease-in-out hover:ring-2 hover:ring-offset-2 hover:ring-content2"
                   variant="light"
                 >
-                  {item.label}
+                  {t(item.label as "downloads" | "teams" | "contribute")}
                 </Button>
               </NextLink>
             )}
@@ -60,6 +75,27 @@ export const Navbar = () => {
 
       <NavbarContent className="flex-grow" justify={"end"}>
         <NavbarItem className="flex gap-4">
+          <Dropdown>
+            <DropdownTrigger>
+              <Button
+                variant="bordered"
+                className="capitalize text-white whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 group transition-all duration-200 ease-in-out hover:ring-2 hover:ring-offset-2 hover:ring-content2"
+              >
+                {selectedValue}
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu
+              aria-label="Single selection example"
+              className={"text-white"}
+              disallowEmptySelection
+              selectionMode="single"
+              selectedKeys={selectedKeys as any}
+              onSelectionChange={(keys) => setSelectedKeys(keys as Set<string>)}
+            >
+              <DropdownItem key="en" onClick={() => changeLocale('en')}>English</DropdownItem>
+              <DropdownItem key="fr" onClick={() => changeLocale('fr')}>Français</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
           <Button
             as={Link}
             href={siteConfig.links.discord}

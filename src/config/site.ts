@@ -11,7 +11,7 @@ export const siteConfig = {
       redirect: true
     },
     {
-      label: "Downloads",
+      label: "downloads",
       href: "/downloads",
     },
     {
@@ -20,12 +20,12 @@ export const siteConfig = {
       redirect: true
     },
     {
-      label: "Teams",
+      label: "teams",
       href: "/teams",
       redirect: false
     },
     {
-      label: "Contribute",
+      label: "contribute",
       href: "/contribute",
       redirect: false
     },

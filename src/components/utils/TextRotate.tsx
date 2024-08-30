@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
-
 import { cn } from "@/lib/utils";
 
 interface TextRotateProps {
@@ -30,21 +29,20 @@ export default function TextRotate({
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
     }, duration);
 
-    // Clean up interval on unmount
     return () => clearInterval(interval);
   }, [words, duration]);
 
   return (
-    <div className="overflow-hidden py-2">
+    <div className="overflow-hidden py-2 relative w-full">
       <AnimatePresence mode="wait">
         <motion.h1
           key={words[index]}
           className={cn(
             className,
-            "text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-7xl font-bold text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text",
-            "truncate"
+            "text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-7xl font-bold text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text"
           )}
           {...framerProps}
+          style={{ whiteSpace: 'normal', overflow: 'visible' }}
         >
           {words[index]}
         </motion.h1>

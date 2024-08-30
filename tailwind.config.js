@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        '404': "url('/404.webp')",
+        '404-secret': "url('/404-secret.webp')",
+      },
       animation: {
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
       },
@@ -28,6 +32,7 @@ module.exports = {
       dark: {
         colors: {
           background: "#121212",
+          foreground: "#1a1a1a",
           primary: "#06B7DB",
           red: {
             50: "#FEF2F2",

@@ -1,28 +1,27 @@
 {
 	"name": "sculk-website",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbo",
 		"build": "next build",
-		"start": "next start",
-		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
+		"start": "next start"
 	},
 	"dependencies": {
+		"@lucide/lab": "^0.1.2",
 		"@nextui-org/react": "^2.4.0",
 		"@nextui-org/theme": "^2.2.5",
 		"@react-aria/visually-hidden": "3.8.12",
-		"clsx": "2.1.1",
+		"clsx": "^2.1.1",
 		"framer-motion": "~11.1.1",
-		"i18next": "^23.14.0",
-		"i18next-browser-languagedetector": "^8.0.0",
-		"i18next-http-backend": "^2.6.1",
 		"lucide-react": "^0.429.0",
-		"next": "14.2.4",
+		"next": "14.2.7",
+		"next-international": "^1.2.4",
 		"next-themes": "^0.2.1",
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
 		"react-i18next": "^15.0.1",
+		"swr": "^2.2.5",
 		"tailwind-merge": "^2.5.2",
 		"tailwindcss-animated": "^1.1.2"
 	},
