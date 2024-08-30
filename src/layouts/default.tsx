@@ -4,23 +4,23 @@ import { siteConfig } from "@/config/site";
 import MaintenancePage from "@/pages/maintenance";
 import { SEO } from "@/layouts/SEO";
 
-export default function Layout({
-                                        children,
-                                      }: {
+interface LayoutProps {
   children: React.ReactNode;
-}) {
+}
+
+export default function Layout({ children }: LayoutProps) {
   if (siteConfig.maintenance) {
     return <MaintenancePage />;
   }
 
   return (
-    <div className="relative flex flex-col h-screen">
-      <SEO title={"Home"}/>
+    <div className="relative flex flex-col min-h-screen">
+      <SEO title="Home" />
       <Navbar />
-      <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">
+      <main className="flex-grow">
         {children}
       </main>
-      {/* todo: add footer */}
+      {/* TODO: add footer */}
     </div>
   );
 }
